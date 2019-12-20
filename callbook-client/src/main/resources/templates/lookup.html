@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Spring OAuth Client Thymeleaf</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5">
+      <a class="navbar-brand">Callbook</a>
+      <ul class="navbar-nav ml-auto">
+      <li class="navbar-text">Hi, <span sec:authentication="name">username</span></li>
+      <li class="nav-item"><a th:href="@{/logout}" class="btn btn-outline-secondary">Logout</a></li>
+      </ul>      
+</nav>
+
+<div class="container">
+	<h3><span th:text="${callbookEntry.fname}" /> <span th:text="${callbookEntry.name}" /></h3>
+	<h1 th:text="${callbookEntry.callsign}" />
+	<h4 th:text="${callbookEntry.aliases}" />
+	
+	<hr />
+	
+</div>    
+
+</body>
+</html>
